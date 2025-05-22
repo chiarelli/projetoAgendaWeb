@@ -31,7 +31,7 @@ A estrutura do projeto segue a arquitetura padrão Angular com divisão clara en
 
 ### 🔌 Integração com a API
 
-Este frontend irá se comunicar com a API do projeto [Agenda API](https://github.com/seu-usuario/projeto-agenda-api), através de requisições HTTP para os seguintes endpoints:
+Este frontend irá se comunicar com a API do projeto [Agenda API](https://github.com/chiarelli/projetoAgendaApiBackend), através de requisições HTTP para os seguintes endpoints:
 
 - `/api/v1/tarefas`  
 - `/api/v1/categorias`  

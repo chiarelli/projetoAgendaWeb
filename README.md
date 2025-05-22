@@ -1,59 +1,84 @@
-# ProjetoAgendaWeb
+# 🌐 Projeto Agenda Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+Este é o frontend do sistema **Agenda**, desenvolvido com **Angular 17**, que tem como objetivo consumir a API REST do projeto [Agenda API](https://github.com/chiarelli/projetoAgendaApiBackend) e oferecer uma interface amigável para cadastro e gerenciamento de tarefas e categorias.
 
-## Development server
+Atualmente, o projeto está em estágio inicial, com estrutura básica e uma interface de exemplo (_Hello World_).  
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+### 🛠 Tecnologias utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 17  
+- TypeScript  
+- Bootstrap 5  
+- HTML5 / CSS3  
+- Angular CLI  
+- Node.js 
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🧱 Estrutura inicial do projeto
 
-```bash
-ng generate component component-name
-```
+A estrutura do projeto segue a arquitetura padrão Angular com divisão clara entre componentes de páginas e componentes compartilhados.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+#### 📂 Componentes já implementados:
 
-```bash
-ng generate --help
-```
+- `TopMenuComponent` – Menu de navegação principal  
+- `CadastroTarefasComponent` – Tela de cadastro de tarefas (em desenvolvimento)  
+- `AppComponent` – Componente principal da aplicação  
 
-## Building
+---
 
-To build the project run:
+### 🔌 Integração com a API
 
-```bash
-ng build
-```
+Este frontend irá se comunicar com a API do projeto [Agenda API](https://github.com/seu-usuario/projeto-agenda-api), através de requisições HTTP para os seguintes endpoints:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `/api/v1/tarefas`  
+- `/api/v1/categorias`  
 
-## Running unit tests
+> ℹ️ As URLs reais e o consumo de serviços HTTP ainda estão sendo configurados.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+### ▶️ Como executar o projeto
 
-## Running end-to-end tests
+#### 1. Instale as dependências
 
-For end-to-end (e2e) testing, run:
+Certifique-se de que o **Node.js** e o **Angular CLI** estão instalados.
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+#### 2. Execute a aplicação em modo desenvolvimento
 
-## Additional Resources
+```bash
+ng serve -o
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+#### Acesse no navegador:
+
+🔗 http://localhost:4200
+
+---
+### ✅ Status atual
+
+- [x] Estrutura inicial do projeto gerada com Angular CLI
+
+- [x] Estilização com Bootstrap
+
+- [x] Componente de menu implementado
+
+- [ ] Componente de cadastro de tarefas
+
+- [ ] Serviço HTTP para integração com backend
+
+- [ ] Rotas e navegação entre páginas
+
+- [ ] Testes unitários
+
+- [ ] Deploy em ambiente de produção
+
+---
+#### 👨‍💻 Autor
+Feito por Raphael Mathias Chiarelli Gomes durante o desenvolvimento do sistema Agenda completo (Frontend + Backend).

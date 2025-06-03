@@ -1,7 +1,8 @@
 
   <div class="card shadow w-100">
-    <div class="card-header bg-primary text-white">
-      Cadastro de Tarefa
+    <div class="card-header bg-light">
+      <h4 class="card-title">Cadastro de Tarefa</h4>
+      <p class="card-subtitle">Preencha o formulário para incluir uma tarefa</p>
     </div>
     <div class="card-body">
       <form>
@@ -11,8 +12,13 @@
         </div>
 
         <div class="mb-3">
-          <label for="dataHora" class="form-label">Data e Hora</label>
-          <input type="datetime-local" class="form-control" id="dataHora">
+          <label for="data" class="form-label">Data</label>
+          <input type="date" class="form-control" id="data">         
+        </div>
+
+        <div class="mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          <input type="time" class="form-control" id="hora">         
         </div>
 
         <div class="mb-3">
@@ -31,13 +37,13 @@
           <label for="categoria" class="form-label">Categoria</label>
           <select class="form-select" id="categoria">
             <option selected disabled>Selecione uma categoria</option>
-            <option value="trabalho">Trabalho</option>
-            <option value="estudo">Estudo</option>
-            <option value="pessoal">Pessoal</option>
+            
+            <option *ngFor="let c of categorias" value="{{c.id}}">{{c.nome}}</option>
+
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-">Realizar cadastro</button>
       </form>
     </div>
   </div>

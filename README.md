@@ -8,7 +8,7 @@ Atualmente, o projeto está em estágio inicial, com estrutura básica e uma int
 
 ### 🛠 Tecnologias utilizadas
 
-- Angular 17  
+- Angular 19  
 - TypeScript  
 - Bootstrap 5  
 - HTML5 / CSS3  
@@ -58,7 +58,7 @@ ng serve -o
 
 #### Acesse no navegador:
 
-🔗 http://localhost:4200
+> 🔗 http://localhost:4200
 
 ---
 ### ✅ Status atual

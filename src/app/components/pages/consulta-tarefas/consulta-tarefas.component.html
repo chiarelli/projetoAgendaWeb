@@ -5,22 +5,25 @@
       <p class="card-subtitle">Consute tarefas por período de tempo</p>
     </div>
     <div class="card-body">
-      <form>
+      <form [formGroup]="form" (ngSubmit)="consultarTarefas()">
         <div class="row mb-3">
             <div class="col-md-3">
                 <label>Data de início</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="dataMin">
             </div>
             <div class="col-md-3">
                 <label>Data de fim</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="dataMax">
             </div>
-            <div class="col-md-6">
-                <input type="submit" class="btn btn-success mt-4" value="Pesquisar tarefas">
+            <div class="col-md-3">
+                <input type="submit" [disabled]="form.invalid" class="btn btn-success mt-4" value="Pesquisar tarefas">
+            </div>
+            <div class="col-md-3">
+                <input type="button" (click)="cleanTable()" class="btn btn-outline-info mt-4" value="Limpar">
             </div>
         </div>
       </form>
-      <table class="table table-striped table-sm table-responsive mt-3">
+      <table *ngIf="resp.total > 0" class="table table-striped table-sm table-responsive mt-3">
         <thead>
             <tr>
                 <th>Nome da tarefa</th>
@@ -32,12 +35,24 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            
+            <tr *ngFor="let t of resp.tarefas">
+                <td>{{ t.titulo }}</td>
+                <td>{{ t.data | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ t.hora }}</td>
+                <td>
+                    <span *ngIf="t.finalizado" class="badge bg-success">
+                        SIM
+                    </span>
+                    <span *ngIf="!t.finalizado" class="badge bg-secondary">
+                        NÃO
+                    </span>
+                </td>
+                <td>
+                    <span class="badge bg-primary">
+                        {{ t.categoria.nome | uppercase }}
+                    </span>
+                </td>
                 <td>
                     <button class="btn btn-sm btn-outline-primary me-1">Editar</button>
                     <button class="btn btn-sm btn-outline-danger me-1">Excluir</button>
@@ -46,7 +61,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="6">Quantidade de tarefas: 0</td>
+                <td colspan="6">Quantidade de tarefas: {{ resp.total }}</td>
             </tr>
         </tfoot>
       </table>

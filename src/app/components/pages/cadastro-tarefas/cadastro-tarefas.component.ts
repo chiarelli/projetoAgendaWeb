@@ -40,7 +40,7 @@ export class CadastroTarefasComponent {
   ngOnInit() {
     this.ngHttp.get(`${env.BASE_API_URL}/categorias`)
       .subscribe(data => {
-        this.categorias = data as any[];
+        this.categorias = data as Categoria[];
       })
   }
 

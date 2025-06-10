@@ -56,6 +56,11 @@
                 <td>
                     <button class="btn btn-sm btn-outline-primary me-1">Editar</button>
                     <button class="btn btn-sm btn-outline-danger me-1">Excluir</button>
+                    <button class="btn btn-sm btn-outline-danger me-1"
+                        data-bs-toggle="modal" data-bs-target="#janela_exclusao"
+                        (click)="onSelected(t)">
+                        Excluir
+                    </button>
                 </td>
             </tr>
         </tbody>
@@ -68,3 +73,37 @@
     </div>
   </div>
 
+  <!-- Modal de exclusão -->
+  <div class="modal fade" id="janela_exclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir tarefa</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Deseja realmente excluir a tarefa?
+          <div class="mt3">
+              <strong>Título:</strong> {{ tarefaSelected.titulo | uppercase }}
+          </div>
+          <div class="mt2">
+              <strong>Data:</strong> {{ tarefaSelected.data | date: 'dd/MM/yyyy' }}
+          </div>
+          <div class="mt2">
+              <strong>Hora:</strong> {{ tarefaSelected.hora }}
+          </div>
+          <div class="mt2">
+              <strong>Finalizado:</strong> {{ tarefaSelected.finalizado ? 'SIM' : 'NAO' }}
+          </div>
+          <div class="mt2">
+              <strong>Categoria:</strong> {{ tarefaSelected.categoria.nome }}
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="excluirTarefa(tarefaSelected.id)">Excluir tarefa</button>
+        </div>
+      </div>
+    </div>
+  </div>

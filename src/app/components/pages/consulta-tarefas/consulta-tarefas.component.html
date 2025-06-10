@@ -54,8 +54,10 @@
                     </span>
                 </td>
                 <td>
-                    <button class="btn btn-sm btn-outline-primary me-1">Editar</button>
-                    <button class="btn btn-sm btn-outline-danger me-1">Excluir</button>
+                    <button class="btn btn-sm btn-outline-primary me-1" 
+                        [routerLink]="['/pages/edicao-tarefas', t.id]">
+                        Editar
+                    </button>
                     <button class="btn btn-sm btn-outline-danger me-1"
                         data-bs-toggle="modal" data-bs-target="#janela_exclusao"
                         (click)="onSelected(t)">

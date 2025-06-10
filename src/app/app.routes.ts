@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: ConsultaTarefasComponent
     },
     {
-        path: 'pages/edicao-tarefas',
+        path: 'pages/edicao-tarefas/:id',
         component: EdicaoTarefasComponent
     },
 ];

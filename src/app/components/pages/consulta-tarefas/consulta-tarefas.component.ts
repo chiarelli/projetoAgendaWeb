@@ -4,7 +4,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { environment as env } from '../../../../environments/environment';
 import { Tarefa, TAREFA_NULL } from '../../../dtos/interfaces';
-import { Tarefa } from '../../../dtos/interfaces';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-consulta-tarefas',
@@ -12,6 +12,7 @@ import { Tarefa } from '../../../dtos/interfaces';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterLink,
   ],
   templateUrl: './consulta-tarefas.component.html',
   styleUrl: './consulta-tarefas.component.css'
